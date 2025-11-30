@@ -8,6 +8,9 @@ import base64
 import uuid
 from datetime import datetime
 
+# Import routers
+from routers import billing
+
 app = FastAPI(
     title="Lucidia API",
     description="AI-powered learning platform - the end of technical barriers",
@@ -24,6 +27,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Include routers
+app.include_router(billing.router, prefix="/api/v1")
 
 
 # ============================================================================
