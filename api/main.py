@@ -10,6 +10,7 @@ from datetime import datetime
 
 # Import routers
 from routers import billing
+from routers import code
 
 app = FastAPI(
     title="Lucidia API",
@@ -30,6 +31,7 @@ app.add_middleware(
 
 # Include routers
 app.include_router(billing.router, prefix="/api/v1")
+app.include_router(code.router)  # Code analysis router (50+ languages)
 
 
 # ============================================================================
