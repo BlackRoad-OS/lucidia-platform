@@ -39,8 +39,10 @@ jobs:
       - name: Label by language
         run: |
           echo "Detecting primary language..."
-          if [ -f "package.json" ]; then
+          if [ -f "package.json" ] && [ -f "tsconfig.json" ]; then
             gh pr edit ${{ github.event.pull_request.number }} --add-label "lang/typescript"
+          elif [ -f "package.json" ]; then
+            gh pr edit ${{ github.event.pull_request.number }} --add-label "lang/javascript"
           elif [ -f "requirements.txt" ] || [ -f "setup.py" ] || [ -f "pyproject.toml" ]; then
             gh pr edit ${{ github.event.pull_request.number }} --add-label "lang/python"
           elif [ -f "go.mod" ]; then
