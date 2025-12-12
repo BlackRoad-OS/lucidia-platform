@@ -30,6 +30,12 @@ Upload a problem → Get visual explanation → Actually understand it
 3. **Practice** - Contextual problems in game-like scenarios
 4. **Master** - Build conceptual understanding, not just procedures
 
+### Learning Plans API (new)
+
+- `POST /api/v1/learning/plan` - generate multi-day study plan using available time and target competency
+- `GET /api/v1/learning/plan/{plan_id}` - retrieve the generated plan with daily sessions
+- `POST /api/v1/learning/plan/{plan_id}/progress` - record completed sessions, notes, and confidence
+
 ## Quick Start
 
 ```bash
