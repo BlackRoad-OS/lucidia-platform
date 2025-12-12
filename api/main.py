@@ -11,6 +11,7 @@ from datetime import datetime
 # Import routers
 from routers import billing
 from routers import code
+from routers import learning
 from routers import memory
 
 app = FastAPI(
@@ -33,6 +34,7 @@ app.add_middleware(
 # Include routers
 app.include_router(billing.router, prefix="/api/v1")
 app.include_router(code.router)  # Code analysis router (50+ languages)
+app.include_router(learning.router)  # Learning plan generator
 app.include_router(memory.router)  # 2048-style memory system
 
 
