@@ -65,7 +65,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
 
       - name: Dependency Review
-        uses: actions/dependency-review-action@0c2a891796fdfc8f8c7e5f8e9b4e3f1c4e6f9c7e # v4
+        uses: actions/dependency-review-action@v4
 
   security-report:
     name: Generate Security Report
